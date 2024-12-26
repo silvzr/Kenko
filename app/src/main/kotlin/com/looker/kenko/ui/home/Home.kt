@@ -52,7 +52,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.looker.kenko.R
 import com.looker.kenko.ui.components.KenkoBorderWidth
-import com.looker.kenko.ui.components.LiftingQuotes
 import com.looker.kenko.ui.components.TertiaryKenkoButton
 import com.looker.kenko.ui.components.icons.symbols.Add
 import com.looker.kenko.ui.components.icons.symbols.ArrowOutward
@@ -187,7 +186,7 @@ private fun Home(
             } else {
                 SelectPlan(onSelectPlanClick = onSelectPlanClick)
             }
-            LiftingQuotes(Modifier.align(CenterHorizontally))
+	    Spacer(modifier = Modifier.weight(0.2F))
         }
     }
 }

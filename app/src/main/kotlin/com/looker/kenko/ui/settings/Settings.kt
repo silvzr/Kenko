@@ -56,7 +56,6 @@ import com.looker.kenko.R
 import com.looker.kenko.data.model.settings.ColorPalettes
 import com.looker.kenko.data.model.settings.Theme
 import com.looker.kenko.ui.components.BackButton
-import com.looker.kenko.ui.components.HealthQuotes
 import com.looker.kenko.ui.components.KenkoBorderWidth
 import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
@@ -123,8 +122,6 @@ private fun Settings(
                 selectedTheme = state.selectedTheme,
                 onClickPalette = onSelectColorPalette
             )
-            Spacer(modifier = Modifier.weight(1F))
-            HealthQuotes(Modifier.align(CenterHorizontally))
         }
     }
 }

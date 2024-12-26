@@ -37,7 +37,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import com.looker.kenko.R
-import com.looker.kenko.ui.components.HealthQuotes
 import com.looker.kenko.ui.components.TypingText
 import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
@@ -159,7 +158,6 @@ private fun GetStarted(
                     }
                 },
             )
-            HealthQuotes(modifier = Modifier.align(Alignment.CenterHorizontally))
         }
     }
 }
