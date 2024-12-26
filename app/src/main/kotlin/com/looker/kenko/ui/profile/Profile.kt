@@ -43,6 +43,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.looker.kenko.R
 import com.looker.kenko.ui.components.KenkoBorderWidth
@@ -308,25 +309,21 @@ private fun LiftsCard(setsPerformed: Int) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 8.dp, vertical = 16.dp),
-            verticalAlignment = Alignment.CenterVertically
+                .padding(horizontal = 24.dp, vertical = 24.dp)
+                .height(IntrinsicSize.Max),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                modifier = Modifier.vertical(false),
                 text = stringResource(R.string.label_lifts),
-                style = MaterialTheme.typography.titleMedium,
+                style = MaterialTheme.typography.titleLarge.copy(
+		    fontSize = 32.sp,
+		),
             )
-            Spacer(modifier = Modifier.width(12.dp))
+
             Text(
                 text = setsPerformed.toString(),
                 style = MaterialTheme.typography.displayLarge.numbers(),
-            )
-            Spacer(modifier = Modifier.weight(1F))
-            Icon(
-                imageVector = KenkoIcons.Reveal,
-                tint = MaterialTheme.colorScheme.surfaceContainerHigh,
-                contentDescription = null,
-                modifier = Modifier.offset(x = 30.dp)
             )
         }
     }
