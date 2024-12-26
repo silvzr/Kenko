@@ -144,10 +144,9 @@ private fun Home(
                         )
                     }
                 } else {
-                    SelectPlanTicker()
+                    this
                 }
             }
-            HorizontalDivider(thickness = KenkoBorderWidth)
             if (state.isPlanSelected) {
                 StartSession(
                     onStartSessionClick = onStartSessionClick,
@@ -249,34 +248,6 @@ private fun ColumnScope.SelectPlan(
         Icon(
             imageVector = KenkoIcons.ArrowOutward,
             contentDescription = null
-        )
-    }
-}
-
-@Composable
-private fun SelectPlanTicker(
-    modifier: Modifier = Modifier
-) {
-    val tickerText = stringResource(R.string.label_select_a_plan)
-    val tickerMarquee = remember {
-        List(10) {
-            tickerText
-        }.joinToString(
-            separator = " ${Typography.bullet} ",
-            postfix = " ${Typography.bullet} ",
-        )
-    }
-    Column(
-        modifier = modifier,
-        verticalArrangement = Arrangement.Center,
-    ) {
-        Text(
-            modifier = Modifier
-                .padding(vertical = 4.dp)
-                .basicMarquee(initialDelayMillis = 0),
-            text = tickerMarquee,
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.outline,
         )
     }
 }
