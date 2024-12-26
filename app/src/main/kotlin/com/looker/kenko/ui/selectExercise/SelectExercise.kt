@@ -132,9 +132,9 @@ private fun SearchNotFound(onAddNewExercise: () -> Unit, modifier: Modifier = Mo
                     contentColor = MaterialTheme.colorScheme.errorContainer
                 ),
             ) {
-                Icon(imageVector = KenkoIcons.Add, contentDescription = null)
-                Spacer(modifier = Modifier.width(4.dp))
                 Text(text = stringResource(R.string.label_create_exercise))
+                Spacer(modifier = Modifier.width(4.dp))
+                Icon(imageVector = KenkoIcons.Add, contentDescription = null)
             }
         }
     }
