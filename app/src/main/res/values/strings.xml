@@ -120,14 +120,14 @@
     <string name="label_muscle_shoulders">Shoulders</string>
 
     <!--Day of Week-->
-    <string name="label_monday">.mon</string>
-    <string name="label_tuesday">.tue</string>
-    <string name="label_wednesday">.wed</string>
-    <string name="label_thursday">.thu</string>
-    <string name="label_friday">.fri</string>
-    <string name="label_saturday">.sat</string>
-    <string name="label_sunday">.sun</string>
-    <string name="label_today">.today</string>
+    <string name="label_monday">Mon</string>
+    <string name="label_tuesday">Tue</string>
+    <string name="label_wednesday">Wed</string>
+    <string name="label_thursday">Thu</string>
+    <string name="label_friday">Fri</string>
+    <string name="label_saturday">Sat</string>
+    <string name="label_sunday">Sun</string>
+    <string name="label_today">Today</string>
     <string name="label_plan">Plan</string>
     <string name="label_select_a_plan">Select A Plan</string>
     <string name="label_selecting_a_plan">Start by Selecting a Plan</string>
