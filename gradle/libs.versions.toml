@@ -1,6 +1,7 @@
 [versions]
 activity = "1.10.0"
 agp = "8.8.0"
+apksign = "1.4"
 coil = "2.7.0"
 composeBom = "2024.12.01"
 core = "1.15.0"
@@ -77,6 +78,7 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 room = { id = "androidx.room", version.ref = "room" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+lsplugin-apksign = { id = "org.lsposed.lsplugin.apksign", version.ref = "apksign" }
 
 [bundles]
 coil = ["coil-compose"]
