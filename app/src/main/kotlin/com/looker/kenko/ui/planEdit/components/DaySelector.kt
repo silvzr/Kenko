@@ -146,13 +146,13 @@ fun DayItem(
 fun kenkoDayName(dayOfWeek: DayOfWeek): String {
     val dayId = remember(dayOfWeek) {
         when (dayOfWeek) {
-            MONDAY -> R.string.label_monday
-            TUESDAY -> R.string.label_tuesday
-            WEDNESDAY -> R.string.label_wednesday
-            THURSDAY -> R.string.label_thursday
-            FRIDAY -> R.string.label_friday
-            SATURDAY -> R.string.label_saturday
-            SUNDAY -> R.string.label_sunday
+            MONDAY -> R.string.label_monday_full
+            TUESDAY -> R.string.label_tuesday_full
+            WEDNESDAY -> R.string.label_wednesday_full
+            THURSDAY -> R.string.label_thursday_full
+            FRIDAY -> R.string.label_friday_full
+            SATURDAY -> R.string.label_saturday_full
+            SUNDAY -> R.string.label_sunday_full
         }
     }
     return stringResource(dayId)

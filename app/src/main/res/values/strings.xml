@@ -127,6 +127,13 @@
     <string name="label_friday">Fri</string>
     <string name="label_saturday">Sat</string>
     <string name="label_sunday">Sun</string>
+    <string name="label_monday_full">Monday</string>
+    <string name="label_tuesday_full">Tuesday</string>
+    <string name="label_wednesday_full">Wednesday</string>
+    <string name="label_thursday_full">Thursday</string>
+    <string name="label_friday_full">Friday</string>
+    <string name="label_saturday_full">Saturday</string>
+    <string name="label_sunday_full">Sunday</string>
     <string name="label_today">Today</string>
     <string name="label_plan">Plan</string>
     <string name="label_selecting_a_plan">Start by Selecting a Plan</string>
