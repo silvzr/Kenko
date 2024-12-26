@@ -20,7 +20,7 @@ val ArrowOutwardLarge: ImageVector
             size = 120.dp to 120.dp,
         ) {
             path(
-                fill = null,
+                fill = SolidColor(Color.Black),
                 stroke = SolidColor(Color.Black),
                 strokeLineWidth = 12.0f,
                 strokeLineCap = StrokeCap.Round,
