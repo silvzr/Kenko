@@ -1,0 +1,76 @@
+name: Release
+on:
+  workflow_dispatch:
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get Tag
+        id: tag
+        run: |
+          latest_tag=$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest | grep "tag_name" | cut -d '"' -f 4)
+          if [[ -z "$latest_tag" ]]; then latest_tag='v0'; fi
+          echo "Latest Tag: $latest_tag"
+          new_tag=$(echo "$latest_tag" | awk -F. '{ $NF = $NF + 1; print "v" $1 "." $2 "." $NF }')
+          echo "tag=$new_tag" >> $GITHUB_ENV
+
+      - name: Write key
+        run: |
+          if [ ! -z "${{ secrets.KEYSTORE }}" ]; then
+            {
+              echo KEYSTORE_PASSWORD='${{ secrets.KEYSTORE_PASSWORD }}'
+              echo KEY_ALIAS='${{ secrets.KEY_ALIAS }}'
+              echo KEY_PASSWORD='${{ secrets.KEY_PASSWORD }}'
+              echo KEYSTORE_FILE='key.jks'
+            } >> gradle.properties
+            echo ${{ secrets.KEYSTORE }} | base64 -d > key.jks
+          fi
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Build with Gradle
+        run: |
+          {
+            echo 'android.native.buildOutput=verbose'
+          } >> gradle.properties
+          sed -i 's/org.gradle.unsafe.configuration-cache=true//g' gradle.properties
+          chmod +x gradlew && ./gradlew clean assembleRelease
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Kenko
+          path: app/build/outputs/apk/release/*.apk
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Release
+        id: release
+        uses: ncipollo/release-action@v1
+        with:
+          name: "${{ env.tag }}"
+          tag: "${{ env.tag }}"
+          allowUpdates: false
+          artifacts: "./app/*.apk"
+          token: ${{ secrets.GITHUB_TOKEN }}
