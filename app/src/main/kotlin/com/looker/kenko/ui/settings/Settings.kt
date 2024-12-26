@@ -55,7 +55,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.looker.kenko.R
 import com.looker.kenko.data.model.settings.ColorPalettes
 import com.looker.kenko.data.model.settings.Theme
-import com.looker.kenko.ui.components.AnimatedWave
 import com.looker.kenko.ui.components.BackButton
 import com.looker.kenko.ui.components.HealthQuotes
 import com.looker.kenko.ui.components.KenkoBorderWidth
@@ -143,12 +142,6 @@ private fun CategoryHeader(
     ) {
         Text(text = title, style = MaterialTheme.typography.titleLarge)
         Spacer(modifier = Modifier.width(4.dp))
-        AnimatedWave(
-            modifier = Modifier.fillMaxWidth(),
-            amplitude = 8f,
-            durationMillis = 5_000,
-            color = MaterialTheme.colorScheme.outlineVariant
-        )
     }
 }
 
