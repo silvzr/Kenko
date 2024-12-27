@@ -88,13 +88,6 @@ fun PlanItem(
                     Icon(imageVector = KenkoIcons.Done, contentDescription = null)
                 }
             }
-            AnimatedVisibility(visible = plan.isActive) {
-                Text(
-                    text = ".selected",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.outline,
-                )
-            }
             if (plan.isActive) {
                 Spacer(modifier = Modifier.height(4.dp))
             }
