@@ -45,9 +45,8 @@
     <string name="label_new_exercise">New Exercise</string>
     <string name="label_target">Target</string>
     <string name="label_is_isometric">Isometric</string>
-    <string name="label_reference">Reference</string>
+    <string name="label_reference">Note</string>
     <string name="label_is_isometric_DESC">Exercise requires static holds</string>
-    <string name="label_reference_optional">optional*</string>
     <string name="label_exercise_exists">Exercise Already Exists</string>
 
     <!--Select Exercises-->

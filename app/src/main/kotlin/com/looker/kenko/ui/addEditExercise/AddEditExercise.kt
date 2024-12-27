@@ -156,9 +156,6 @@ private fun ReferenceTextField(
         colors = kenkoTextFieldColor(),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri),
         shape = MaterialTheme.shapes.large,
-        supportingText = {
-            Text(text = stringResource(R.string.label_reference_optional))
-        },
         label = {
             Text(text = stringResource(R.string.label_reference))
         },
