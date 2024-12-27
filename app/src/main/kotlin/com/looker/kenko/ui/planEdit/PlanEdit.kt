@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Remove
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
@@ -54,7 +56,6 @@ import com.looker.kenko.ui.planEdit.components.ExerciseItem
 import com.looker.kenko.ui.planEdit.components.KenkoAddButton
 import com.looker.kenko.ui.planEdit.components.kenkoDayName
 import com.looker.kenko.ui.selectExercise.SelectExercise
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 import com.looker.kenko.ui.theme.numbers
 import kotlinx.coroutines.launch
@@ -213,7 +214,7 @@ private fun ExerciseItemActions(
                 containerColor = MaterialTheme.colorScheme.errorContainer
             )
         ) {
-            Icon(imageVector = KenkoIcons.Remove, contentDescription = null)
+            Icon(imageVector = Icons.Outlined.Remove, contentDescription = null)
         }
         Spacer(modifier = Modifier.width(12.dp))
         Text(

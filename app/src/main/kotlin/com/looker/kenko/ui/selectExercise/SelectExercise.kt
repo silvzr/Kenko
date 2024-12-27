@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -40,7 +42,6 @@ import com.looker.kenko.ui.components.HorizontalTargetChips
 import com.looker.kenko.ui.components.disableScrollConnection
 import com.looker.kenko.ui.components.kenkoTextFieldColor
 import com.looker.kenko.ui.planEdit.components.ExerciseItem
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 import com.looker.kenko.ui.theme.end
 import com.looker.kenko.ui.theme.start
@@ -134,7 +135,7 @@ private fun SearchNotFound(onAddNewExercise: () -> Unit, modifier: Modifier = Mo
             ) {
                 Text(text = stringResource(R.string.label_create_exercise))
                 Spacer(modifier = Modifier.width(4.dp))
-                Icon(imageVector = KenkoIcons.Add, contentDescription = null)
+                Icon(imageVector = Icons.Outlined.Add, contentDescription = null)
             }
         }
     }
@@ -168,7 +169,7 @@ private fun ExerciseSearchField(
             shape = MaterialTheme.shapes.large.start(8.dp),
             onClick = onAddClick,
         ) {
-            Icon(imageVector = KenkoIcons.Add, contentDescription = null)
+            Icon(imageVector = Icons.Outlined.Add, contentDescription = null)
         }
     }
 }

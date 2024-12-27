@@ -1,12 +1,13 @@
 package com.looker.kenko.ui.components
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonColors
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.looker.kenko.ui.theme.KenkoIcons
 
 @Composable
 fun BackButton(
@@ -19,6 +20,6 @@ fun BackButton(
         colors = colors,
         onClick = onClick,
     ) {
-        Icon(imageVector = KenkoIcons.ArrowBack, contentDescription = null)
+        Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = null)
     }
 }

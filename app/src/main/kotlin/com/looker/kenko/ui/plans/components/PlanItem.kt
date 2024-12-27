@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Check
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedIconToggleButton
@@ -46,7 +48,6 @@ import com.looker.kenko.data.model.Plan
 import com.looker.kenko.data.model.sampleExercises
 import com.looker.kenko.data.model.stats
 import com.looker.kenko.ui.extensions.normalizeInt
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 import kotlinx.datetime.DayOfWeek
 
@@ -85,7 +86,7 @@ fun PlanItem(
                     checked = plan.isActive,
                     onCheckedChange = onActiveChange
                 ) {
-                    Icon(imageVector = KenkoIcons.Done, contentDescription = null)
+                    Icon(imageVector = Icons.Outlined.Check, contentDescription = null)
                 }
             }
             if (plan.isActive) {

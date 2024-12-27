@@ -4,6 +4,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowOutward
+import androidx.compose.material.icons.outlined.Notes
 import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -16,7 +19,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.looker.kenko.R
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 
 @Composable
@@ -34,7 +36,7 @@ fun ReferenceItem(
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(imageVector = KenkoIcons.Lightbulb, contentDescription = null)
+            Icon(imageVector = Icons.Outlined.Notes, contentDescription = null)
             Spacer(modifier = Modifier.width(8.dp))
             Text(
                 text = stringResource(R.string.label_reference),
@@ -42,7 +44,7 @@ fun ReferenceItem(
             )
             Spacer(modifier = Modifier.weight(1F))
             FilledTonalIconButton(onClick = onClick) {
-                Icon(imageVector = KenkoIcons.ArrowOutward, contentDescription = null)
+                Icon(imageVector = Icons.Outlined.ArrowOutward, contentDescription = null)
             }
         }
     }

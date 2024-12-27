@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowForward
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -39,7 +41,6 @@ import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import com.looker.kenko.R
 import com.looker.kenko.ui.components.TypingText
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 import com.looker.kenko.ui.theme.header
 import kotlinx.coroutines.launch
@@ -160,7 +161,7 @@ private fun GetStarted(
 @Composable
 private fun ButtonIcon(
     modifier: Modifier = Modifier,
-    icon: ImageVector = KenkoIcons.ArrowForward,
+    icon: ImageVector = Icons.Outlined.ArrowForward,
 ) {
     Icon(
         modifier = modifier

@@ -12,6 +12,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Edit
+import androidx.compose.material.icons.outlined.EditNote
+import androidx.compose.material.icons.outlined.Save
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -41,7 +45,6 @@ import com.looker.kenko.ui.components.FlowHorizontalChips
 import com.looker.kenko.ui.components.KenkoButton
 import com.looker.kenko.ui.components.kenkoTextFieldColor
 import com.looker.kenko.ui.extensions.plus
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 
 @Composable
@@ -125,7 +128,7 @@ private fun AddEditExercise(
                 onClick = onDone,
                 label = {
                     Icon(
-                        imageVector = KenkoIcons.Save,
+                        imageVector = Icons.Outlined.Save,
                         contentDescription = null,
                     )
                 },
@@ -161,7 +164,7 @@ private fun ReferenceTextField(
         },
         isError = isError,
         leadingIcon = {
-            Icon(imageVector = KenkoIcons.Lightbulb, contentDescription = null)
+            Icon(imageVector = Icons.Outlined.EditNote, contentDescription = null)
         }
     )
 }
@@ -186,7 +189,7 @@ private fun ExerciseTextField(
         },
         isError = isError,
         leadingIcon = {
-            Icon(imageVector = KenkoIcons.Rename, contentDescription = null)
+            Icon(imageVector = Icons.Outlined.Edit, contentDescription = null)
         },
         supportingText = {
             if (isError) {

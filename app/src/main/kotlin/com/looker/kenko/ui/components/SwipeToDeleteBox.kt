@@ -17,6 +17,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -34,7 +36,6 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.looker.kenko.ui.theme.KenkoIcons
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -97,7 +98,7 @@ fun SwipeToDeleteBox(
                 modifier = Modifier
                     .requiredWidth(actionWidth)
                     .align(Alignment.CenterEnd),
-                imageVector = KenkoIcons.Delete,
+                imageVector = Icons.Outlined.Delete,
                 tint = MaterialTheme.colorScheme.onErrorContainer,
                 contentDescription = null
             )

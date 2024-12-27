@@ -26,6 +26,10 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Add
+import androidx.compose.material.icons.outlined.History
+import androidx.compose.material.icons.outlined.Notes
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalIconButton
@@ -62,7 +66,6 @@ import com.looker.kenko.ui.extensions.normalizeInt
 import com.looker.kenko.ui.extensions.plus
 import com.looker.kenko.ui.planEdit.components.dayName
 import com.looker.kenko.ui.sessionDetail.components.SetItem
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 import com.looker.kenko.utils.DateTimeFormat
 import com.looker.kenko.utils.formatDate
@@ -183,7 +186,7 @@ private fun SetsList(
                     if (hasPreviousSession) {
                         IconButton(onClick = onHistoryClick) {
                             Icon(
-                                imageVector = KenkoIcons.History,
+                                imageVector = Icons.Outlined.History,
                                 contentDescription = null,
                             )
                         }
@@ -198,12 +201,12 @@ private fun SetsList(
                 StickyHeader(name = exercise.name) {
                     if (!exercise.reference.isNullOrBlank()) {
                         FilledTonalIconButton(onClick = { onReferenceClick(exercise.reference) }) {
-                            Icon(imageVector = KenkoIcons.Lightbulb, contentDescription = null)
+                            Icon(imageVector = Icons.Outlined.Notes, contentDescription = null)
                         }
                     }
                     if (isEditable) {
                         FilledTonalIconButton(onClick = { onSelectBottomSheet(exercise) }) {
-                            Icon(imageVector = KenkoIcons.Add, contentDescription = null)
+                            Icon(imageVector = Icons.Outlined.Add, contentDescription = null)
                         }
                     }
                 }

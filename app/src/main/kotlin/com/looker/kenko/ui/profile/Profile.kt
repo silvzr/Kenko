@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -21,6 +22,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Add
+import androidx.compose.material.icons.outlined.ArrowOutward
+import androidx.compose.material.icons.outlined.Edit
+import androidx.compose.material.icons.outlined.FitnessCenter
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.HorizontalDivider
@@ -53,7 +60,6 @@ import com.looker.kenko.ui.extensions.PHI
 import com.looker.kenko.ui.extensions.normalizeInt
 import com.looker.kenko.ui.extensions.plus
 import com.looker.kenko.ui.extensions.vertical
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 import com.looker.kenko.ui.theme.end
 import com.looker.kenko.ui.theme.numbers
@@ -96,7 +102,7 @@ private fun Profile(
                 },
                 actions = {
                     IconButton(onClick = onSettingsClick) {
-                        Icon(imageVector = KenkoIcons.Settings, contentDescription = null)
+                        Icon(imageVector = Icons.Outlined.Settings, contentDescription = null)
                     }
                 },
             )
@@ -165,7 +171,7 @@ private fun CurrentPlanCard(
                     .padding(start = 24.dp, top = 2.dp, end = 12.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Icon(imageVector = KenkoIcons.Plan, contentDescription = null)
+                Icon(imageVector = Icons.Outlined.FitnessCenter, contentDescription = null)
                 Spacer(modifier = Modifier.width(12.dp))
                 Text(
                     text = stringResource(R.string.label_current_plan),
@@ -173,7 +179,7 @@ private fun CurrentPlanCard(
                 )
                 Spacer(modifier = Modifier.weight(1F))
                 FilledIconButton(onClick = onPlanClick) {
-                    Icon(imageVector = KenkoIcons.Rename, contentDescription = null)
+                    Icon(imageVector = Icons.Outlined.Edit, contentDescription = null)
                 }
             }
             HorizontalDivider(
@@ -201,12 +207,6 @@ private fun CurrentPlanCard(
                         content()
                     }
                 }
-                Icon(
-                    imageVector = KenkoIcons.Stack,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.secondary,
-                    modifier = Modifier.offset(x = 0.dp)
-                )
             }
         }
     }
@@ -234,8 +234,9 @@ fun SelectPlanCard(
             color = MaterialTheme.colorScheme.onPrimaryContainer,
         )
         Icon(
-            imageVector = KenkoIcons.ArrowOutwardLarge,
+            imageVector = Icons.Outlined.ArrowOutward,
             tint = MaterialTheme.colorScheme.onPrimaryContainer,
+	    modifier = Modifier.size(60.dp),
             contentDescription = null
         )
     }
@@ -291,8 +292,9 @@ private fun ExerciseCard(
             contentAlignment = Alignment.Center
         ) {
             Icon(
-                imageVector = KenkoIcons.Add,
+                imageVector = Icons.Outlined.Add,
                 tint = MaterialTheme.colorScheme.onSecondaryContainer,
+		modifier = Modifier.size(44.dp),
                 contentDescription = stringResource(R.string.label_add),
             )
         }

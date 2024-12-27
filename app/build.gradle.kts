@@ -94,6 +94,7 @@ android {
 dependencies {
 
     kotlin("stdlib")
+    implementation("androidx.compose.material:material-icons-extended")
     implementation(libs.androidx.core.ktx)
 
     implementation(platform(libs.compose.bom))

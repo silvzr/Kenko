@@ -22,6 +22,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Check
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -57,7 +59,6 @@ import com.looker.kenko.data.model.settings.ColorPalettes
 import com.looker.kenko.data.model.settings.Theme
 import com.looker.kenko.ui.components.BackButton
 import com.looker.kenko.ui.components.KenkoBorderWidth
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 import com.looker.kenko.ui.theme.colorSchemes.defaultColorSchemes
 import com.looker.kenko.ui.theme.colorSchemes.sereneColorSchemes
@@ -216,7 +217,7 @@ private fun ColorPaletteItem(
                             contentAlignment = Alignment.Center
                         ) {
                             Icon(
-                                imageVector = KenkoIcons.Done,
+                                imageVector = Icons.Outlined.Check,
                                 contentDescription = null
                             )
                         }

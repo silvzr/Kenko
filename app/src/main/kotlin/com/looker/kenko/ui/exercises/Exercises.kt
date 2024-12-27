@@ -12,6 +12,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Add
+import androidx.compose.material.icons.outlined.Notes
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FilledTonalIconButton
@@ -45,7 +48,6 @@ import com.looker.kenko.ui.components.KenkoBorderWidth
 import com.looker.kenko.ui.components.SecondaryKenkoButton
 import com.looker.kenko.ui.components.SwipeToDeleteBox
 import com.looker.kenko.ui.extensions.plus
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 
 @Composable
@@ -87,7 +89,7 @@ private fun Exercises(
                 onClick = { onCreateClick(state.selected) },
                 label = {
                     Icon(
-                        imageVector = KenkoIcons.Add,
+                        imageVector = Icons.Outlined.Add,
                         contentDescription = null,
                     )
                 },
@@ -147,7 +149,7 @@ private fun ExercisesList(
                                 shape = MaterialTheme.shapes.extraLarge,
                                 onClick = { onReferenceClick(exercise.reference) }
                             ) {
-                                Icon(imageVector = KenkoIcons.Lightbulb, contentDescription = null)
+                                Icon(imageVector = Icons.Outlined.Notes, contentDescription = null)
                             }
                         }
                     }

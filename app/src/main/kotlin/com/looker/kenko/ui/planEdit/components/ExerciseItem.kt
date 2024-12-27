@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -30,7 +32,6 @@ import com.looker.kenko.R
 import com.looker.kenko.data.model.Exercise
 import com.looker.kenko.data.model.MuscleGroups
 import com.looker.kenko.data.model.sampleExercises
-import com.looker.kenko.ui.theme.KenkoIcons
 import com.looker.kenko.ui.theme.KenkoTheme
 
 @Composable
@@ -90,7 +91,7 @@ fun KenkoAddButton(onClick: () -> Unit) {
             contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
         ),
     ) {
-        Icon(imageVector = KenkoIcons.Add, contentDescription = null)
+        Icon(imageVector = Icons.Outlined.Add, contentDescription = null)
         Spacer(modifier = Modifier.width(8.dp))
         Text(text = stringResource(R.string.label_add))
     }

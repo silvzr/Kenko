@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Check
 import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -32,7 +34,6 @@ import com.looker.kenko.ui.addSet.AddSetViewModel.FloatTransformation
 import com.looker.kenko.ui.addSet.AddSetViewModel.IntTransformation
 import com.looker.kenko.ui.addSet.components.DraggableTextField
 import com.looker.kenko.ui.addSet.components.rememberDraggableTextFieldState
-import com.looker.kenko.ui.theme.KenkoIcons
 
 private val incrementButtonModifier = Modifier
     .height(48.dp)
@@ -157,7 +158,7 @@ private fun AddSetHeader(
         }
         FilledTonalIconButton(onClick = onClick) {
             Icon(
-                imageVector = KenkoIcons.Done,
+                imageVector = Icons.Outlined.Check,
                 contentDescription = ""
             )
         }
