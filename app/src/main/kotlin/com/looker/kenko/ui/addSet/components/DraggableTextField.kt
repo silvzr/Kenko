@@ -65,7 +65,7 @@ fun DraggableTextField(
                 }
             )
             .requiredHeight(40.dp)
-            .requiredWidthIn(40.dp)
+            .requiredWidthIn(min = 40.dp, max = 80.dp)
             .wrapContentWidth()
             .clip(CircleShape)
             .background(containerColor),

@@ -64,69 +64,88 @@ fun AddSet(exercise: Exercise, onDone: () -> Unit) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        SwipeableTextField(
-            modifier = Modifier.align(CenterHorizontally)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            TextButton(
-                modifier = incrementButtonModifier,
-                onClick = { viewModel.addRep(-1) }
-            ) {
-                Text(text = stringResource(R.string.label_minus_int, 1))
-            }
-            val reps = rememberDraggableTextFieldState(
-                events = viewModel.repsDragEvents,
+            Text(
+                text = stringResource(exercise.repDurationStringRes),
+                modifier = Modifier.weight(1f)
             )
-            DraggableTextField(
-                dragState = reps,
-                textFieldState = viewModel.reps,
-                inputTransformation = IntTransformation,
-                supportingText = stringResource(exercise.repDurationStringRes),
-                modifier = zIndexModifier,
-            )
-            TextButton(
-                modifier = incrementButtonModifier,
-                onClick = { viewModel.addRep(1) }
+
+            SwipeableTextField(
+                modifier = Modifier
             ) {
-                Text(text = stringResource(R.string.label_plus_int, 1))
-            }
-            TextButton(
-                modifier = incrementButtonModifier,
-                onClick = { viewModel.addRep(5) }
-            ) {
-                Text(text = stringResource(R.string.label_plus_int, 5))
+                TextButton(
+                    modifier = incrementButtonModifier,
+                    onClick = { viewModel.addRep(-1) }
+                ) {
+                    Text(text = stringResource(R.string.label_minus_int, 1))
+                }
+                val reps = rememberDraggableTextFieldState(
+                    events = viewModel.repsDragEvents,
+                )
+                DraggableTextField(
+                    dragState = reps,
+                    textFieldState = viewModel.reps,
+                    inputTransformation = IntTransformation,
+                    modifier = zIndexModifier,
+                )
+                TextButton(
+                    modifier = incrementButtonModifier,
+                    onClick = { viewModel.addRep(1) }
+                ) {
+                    Text(text = stringResource(R.string.label_plus_int, 1))
+                }
+                TextButton(
+                    modifier = incrementButtonModifier,
+                    onClick = { viewModel.addRep(5) }
+                ) {
+                    Text(text = stringResource(R.string.label_plus_int, 5))
+                }
             }
         }
+
         Spacer(modifier = Modifier.height(24.dp))
-        SwipeableTextField(
-            modifier = Modifier.align(CenterHorizontally)
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            TextButton(
-                modifier = incrementButtonModifier,
-                onClick = { viewModel.addWeight(-1F) }
-            ) {
-                Text(text = stringResource(R.string.label_minus_int, 1F))
-            }
-            val weights = rememberDraggableTextFieldState(
-                events = viewModel.weightsDragEvents,
+            Text(
+                text = stringResource(R.string.label_weight),
+                modifier = Modifier.weight(1f)
             )
-            DraggableTextField(
-                dragState = weights,
-                textFieldState = viewModel.weights,
-                supportingText = stringResource(R.string.label_weight),
-                inputTransformation = FloatTransformation,
-                modifier = zIndexModifier,
-            )
-            TextButton(
-                modifier = incrementButtonModifier,
-                onClick = { viewModel.addWeight(1F) }
+            SwipeableTextField(
+                modifier = Modifier
             ) {
-                Text(text = stringResource(R.string.label_plus_int, 1F))
-            }
-            TextButton(
-                modifier = incrementButtonModifier,
-                onClick = { viewModel.addWeight(5F) }
-            ) {
-                Text(text = stringResource(R.string.label_plus_int, 5F))
+                TextButton(
+                    modifier = incrementButtonModifier,
+                    onClick = { viewModel.addWeight(-1F) }
+                ) {
+                    Text(text = stringResource(R.string.label_minus_int, 1F))
+                }
+                val weights = rememberDraggableTextFieldState(
+                    events = viewModel.weightsDragEvents,
+                )
+                DraggableTextField(
+                    dragState = weights,
+                    textFieldState = viewModel.weights,
+                    inputTransformation = FloatTransformation,
+                    modifier = zIndexModifier,
+                )
+                TextButton(
+                    modifier = incrementButtonModifier,
+                    onClick = { viewModel.addWeight(1F) }
+                ) {
+                    Text(text = stringResource(R.string.label_plus_int, 1F))
+                }
+                TextButton(
+                    modifier = incrementButtonModifier,
+                    onClick = { viewModel.addWeight(5F) }
+                ) {
+                    Text(text = stringResource(R.string.label_plus_int, 5F))
+                }
             }
         }
         Spacer(modifier = Modifier.height(36.dp))

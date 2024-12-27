@@ -32,8 +32,8 @@ class AddSetViewModel @AssistedInject constructor(
 
     private var timer: Timer? = null
 
-    val reps: TextFieldState = TextFieldState("12")
-    val weights: TextFieldState = TextFieldState("20.0")
+    val reps: TextFieldState = TextFieldState("10")
+    val weights: TextFieldState = TextFieldState("50.0")
 
     fun addRep(value: Int) {
         reps.setTextAndPlaceCursorAtEnd((repInt + value).toString())
