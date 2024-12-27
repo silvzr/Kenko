@@ -57,7 +57,7 @@ class AddEditExerciseViewModel @Inject constructor(
 
     private val isReferenceInvalid: Flow<Boolean> =
         snapshotFlow { reference }
-            .mapLatest { it.toHttpUrlOrNull() == null && it.isNotBlank() }
+            .mapLatest { false }
 
     private val exerciseAlreadyExistError: Flow<Boolean> =
         snapshotFlow { exerciseName }
