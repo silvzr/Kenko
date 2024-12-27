@@ -50,17 +50,7 @@ object KenkoIcons {
 
     val ArrowOutwardLarge: ImageVector = com.looker.kenko.ui.components.icons.ArrowOutwardLarge
 
-    val Cloud: ImageVector = com.looker.kenko.ui.components.icons.Cloud
-
     val Colony: ImageVector = com.looker.kenko.ui.components.icons.Colony
-
-    val Arrow1: ImageVector = com.looker.kenko.ui.components.icons.Arrow1
-
-    val Arrow2: ImageVector = com.looker.kenko.ui.components.icons.Arrow2
-
-    val Arrow3: ImageVector = com.looker.kenko.ui.components.icons.Arrow3
-
-    val Arrow4: ImageVector = com.looker.kenko.ui.components.icons.Arrow4
 
     val Dawn: ImageVector = com.looker.kenko.ui.components.icons.Dawn
 

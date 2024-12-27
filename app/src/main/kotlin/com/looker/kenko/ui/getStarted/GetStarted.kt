@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
@@ -125,117 +126,35 @@ private fun GetStarted(
                 modifier = Modifier.padding(horizontal = 18.dp),
             )
             Spacer(modifier = Modifier.weight(1F))
-            ButtonGroup(
-                modifier = Modifier.align(Alignment.CenterHorizontally),
-                content = {
-                    Button(
-                        modifier = Modifier
-                            .layoutId(ButtonID.Button)
-                            .graphicsLayer {
-                                scaleX = buttonVisibility.value
-                                scaleY = buttonVisibility.value
-                                translationY = (1F - buttonVisibility.value) * 15F
-                            },
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.tertiary,
-                            contentColor = MaterialTheme.colorScheme.onTertiary,
-                        ),
-                        onClick = onNextClick,
-                        contentPadding = PaddingValues(
-                            vertical = 24.dp,
-                            horizontal = 40.dp
-                        )
-                    ) {
-                        ButtonIcon(
-                            modifier = Modifier
-                                .graphicsLayer {
-                                    translationX = iconVisibility.value
-                                    rotationZ = iconVisibility.value
-                                }
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(text = stringResource(R.string.label_lets_go))
-                    }
-                },
-            )
-        }
-    }
-}
-
-@Composable
-private fun ButtonGroup(
-    content: @Composable () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    Layout(
-        modifier = modifier,
-        content = {
-            Icon(
-                modifier = Modifier.layoutId(ButtonID.Cloud),
-                imageVector = KenkoIcons.Cloud,
-                contentDescription = null
-            )
-            Icon(
-                modifier = Modifier.layoutId(ButtonID.Arrow1),
-                imageVector = KenkoIcons.Arrow1,
-                contentDescription = null
-            )
-            Icon(
-                modifier = Modifier.layoutId(ButtonID.Arrow2),
-                imageVector = KenkoIcons.Arrow2,
-                contentDescription = null
-            )
-            Icon(
-                modifier = Modifier.layoutId(ButtonID.Arrow3),
-                imageVector = KenkoIcons.Arrow3,
-                contentDescription = null
-            )
-            Icon(
-                modifier = Modifier.layoutId(ButtonID.Arrow4),
-                imageVector = KenkoIcons.Arrow4,
-                contentDescription = null
-            )
-            content()
-        }
-    ) { measurables, constraints ->
-        lateinit var cloud: Measurable
-        lateinit var arrow1: Measurable
-        lateinit var arrow2: Measurable
-        lateinit var arrow3: Measurable
-        lateinit var arrow4: Measurable
-        lateinit var button: Measurable
-        measurables.forEach { measurable ->
-            when (measurable.layoutId) {
-                ButtonID.Button -> button = measurable
-                ButtonID.Cloud -> cloud = measurable
-                ButtonID.Arrow1 -> arrow1 = measurable
-                ButtonID.Arrow2 -> arrow2 = measurable
-                ButtonID.Arrow3 -> arrow3 = measurable
-                ButtonID.Arrow4 -> arrow4 = measurable
-                else -> error("Unknown Element")
+    	    Button(
+        	onClick = onNextClick,
+        	modifier = Modifier.align(Alignment.CenterHorizontally),
+        	colors = ButtonDefaults.buttonColors(
+            	    containerColor = MaterialTheme.colorScheme.tertiary,
+            	    contentColor = MaterialTheme.colorScheme.onTertiary,
+                ),
+            	contentPadding = PaddingValues(
+            	    vertical = 24.dp,
+           	    horizontal = 40.dp
+        	)
+    	    ) {
+        	Row(
+            	    verticalAlignment = Alignment.CenterVertically
+        	) {
+            	    ButtonIcon(
+            		modifier = Modifier
+            	    	    .graphicsLayer {
+                         	translationX = iconVisibility.value
+                         	rotationZ = iconVisibility.value
+                    	    }
+            	    )
+            	    Spacer(modifier = Modifier.width(8.dp))
+            	    Text(text = stringResource(R.string.label_lets_go))
+		}
             }
-        }
-        val cloudPlaceable = cloud.measure(constraints)
-        val arrow1Placeable = arrow1.measure(constraints)
-        val arrow2Placeable = arrow2.measure(constraints)
-        val arrow3Placeable = arrow3.measure(constraints)
-        val arrow4Placeable = arrow4.measure(constraints)
-        val buttonPlaceable = button.measure(constraints)
-        val width = 360.dp.toPx().toInt()
-        layout(width, 162.dp.toPx().toInt()) {
-            val x = (width / 2) - (buttonPlaceable.width / 2)
-            cloudPlaceable.placeRelative(16.dp.toPx().toInt(), 31.dp.toPx().toInt())
-            arrow1Placeable.placeRelative(148.dp.toPx().toInt(), 2.dp.toPx().toInt())
-            arrow2Placeable.placeRelative(200.dp.toPx().toInt(), 0.dp.toPx().toInt())
-            arrow3Placeable.placeRelative(270.dp.toPx().toInt(), 26.dp.toPx().toInt())
-            arrow4Placeable.placeRelative(290.dp.toPx().toInt(), 100.dp.toPx().toInt())
-            buttonPlaceable.placeRelative(x, 68.dp.toPx().toInt())
+	    Spacer(modifier = Modifier.weight(0.05F))
         }
     }
-}
-
-private enum class ButtonID {
-    Cloud, Arrow1, Arrow2, Arrow3, Arrow4, Button
 }
 
 @Composable
