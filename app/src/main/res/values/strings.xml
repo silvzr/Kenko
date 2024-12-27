@@ -32,7 +32,7 @@
     <string name="label_lifts">Lifts</string>
     <string name="label_plan_description">
         <ul>%1$s exercises</ul>\n
-        <ul>%2$s days</ul>\n
+        <ul>%2$s workouts</ul>\n
         <ul>%3$s rest days</ul>
     </string>
 
@@ -42,7 +42,7 @@
     <string name="label_create_exercise">Create</string>
 
     <!--Add Exercises-->
-    <string name="label_new_exercise">New Exercise?</string>
+    <string name="label_new_exercise">New Exercise</string>
     <string name="label_target">Target</string>
     <string name="label_is_isometric">Isometric</string>
     <string name="label_reference">Reference</string>
@@ -69,10 +69,10 @@
 
     <!--Project Specific-->
     <string name="label_session">Session</string>
-    <string name="label_exercise">Exercise</string>
-    <string name="label_reps">.reps</string>
-    <string name="label_duration">.duration</string>
-    <string name="label_weight">.weight</string>
+    <string name="label_exercise">Exercises</string>
+    <string name="label_reps">Reps</string>
+    <string name="label_duration">Duration</string>
+    <string name="label_weight">Weight</string>
     <string name="label_coming_soon">Coming Soon</string>
 
     <!--Navigation-->
