@@ -18,6 +18,6 @@ import androidx.compose.runtime.Immutable
 
 @Immutable
 @JvmInline
-value class Rating(val value: Float)
+value class Rating(val value: Double)
 
 operator fun Rating.plus(other: Rating) = Rating(value + other.value)
